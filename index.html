@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <fieldset style="width: 200px;height: 200px;">
+        <legend>Chỉ số BMI của bạn</legend>
+        Chiều cao(m) <input type="text" id="ChieuCao">
+        Cân Nặng(kg) <input type="text" id="CanNang">
+
+        <input style="margin-top: 15px" type="button" value="Tính BMI" onclick="BMI();">
+<div id="Res" style="margin-top: 5px"> Kết quả </div>
+    </fieldset>
+</form>
+<script>
+    function BMI()
+    {
+        var res;
+        var ChieuCao=(parseFloat(document.getElementById('ChieuCao').value));
+        var CanNang=parseInt(document.getElementById('CanNang').value);
+        var BMI = CanNang/(ChieuCao*2);
+        if (BMI < 18){
+            res='Underweight';}
+        else if (BMI < 25.0){
+           res = 'Normal';}
+        else if (BMI < 30.0){
+            res = 'Overweight';}
+        else{
+            res = 'Obese';}
+alert(BMI);
+        document.getElementById('Res').innerHTML=res;
+    }
+</script>
+</body>
+</html>
